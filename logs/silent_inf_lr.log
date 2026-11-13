@@ -1,0 +1,95 @@
+EXIT CODE: 1
+--- STDOUT ---
+Loading config from 
+C:\Users\User\PycharmProjects\Python_Soup1\configs\silent_inf_lr.yaml...
+┌────────────────────────────── Training Setup ───────────────────────────────┐
+│ Device:  CPU (no GPU detected)                                              │
+│ Memory:  N/A (CPU mode)                                                     │
+│ Model:   Qwen/Qwen2.5-0.5B-Instruct                                         │
+│ Task:    sft                                                                │
+│ Backend: transformers                                                       │
+│ LoRA:    r=8, alpha=16                                                      │
+│ Quant:   none                                                               │
+│ Seed:    42                                                                 │
+└─────────────────────────────────────────────────────────────────────────────┘
+Loading dataset...
+Loaded: 3 train samples
+Run ID: run_20261112_160754_20388428
+Setting up model + trainer...
+Loading tokenizer: Qwen/Qwen2.5-0.5B-Instruct
+Loading model: Qwen/Qwen2.5-0.5B-Instruct
+LoRA applied: 540,672 trainable / 494,573,440 total (0.11%)
+Rewind log: 
+C:\Users\User\PycharmProjects\Python_Soup1\output_silent_inf_lr\rewind.jsonl
+Base revision: 7ae557604adf67be50417f59c2c2f167def9a775 (bound Hub commit)
+Training started!
+
+{'eval_loss': 'nan', 'eval_runtime': '1.677', 'eval_samples_per_second': '0.596', 'eval_steps_per_second': '0.596', 'eval_entropy': 'nan', 'eval_num_tokens': '125', 'eval_mean_token_accuracy': '0.125', 'epoch': '1'}
+{'train_runtime': '331.6', 'train_samples_per_second': '0.009', 'train_steps_per_second': '0.003', 'train_loss': '1.49', 'epoch': '1'}
+┌───────────────── Soup Training: Qwen/Qwen2.5-0.5B-Instruct ─────────────────┐
+│ Epoch 1.0/1   100%                                                          │
+│ Step:  1/1                                                                  │
+│ Loss:  -    LR: 0.00e+00                                                    │
+│ Val loss: nan                                                               │
+│ Speed: 0.00 it/s                                                            │
+└─────────────────────────── CPU (no GPU detected) ───────────────────────────┘Crash bundle written: 
+C:\Users\User\PycharmProjects\Python_Soup1\.soup-crashes\crash_20261112T131338Z
+_99f15a80.crash
+Attach this file when reporting the failure.
+
+--- STDERR ---
+
+Loading weights:   0%|          | 0/290 [00:00<?, ?it/s]
+Loading weights:  10%|█         | 29/290 [00:00<00:01, 246.12it/s]
+Loading weights:  19%|█▊        | 54/290 [00:00<00:01, 183.63it/s]
+Loading weights:  26%|██▌       | 74/290 [00:00<00:01, 181.13it/s]
+Loading weights: 100%|██████████| 290/290 [00:00<00:00, 629.82it/s]
+
+Map:   0%|          | 0/3 [00:00<?, ? examples/s][transformers] return_assistant_tokens_mask==True but chat template does not contain `{% generation %}` keyword.
+
+Map: 100%|██████████| 3/3 [00:00<00:00, 55.97 examples/s]
+
+Map:   0%|          | 0/1 [00:00<?, ? examples/s]
+Map: 100%|██████████| 1/1 [00:00<00:00, 304.89 examples/s]
+
+Map:   0%|          | 0/3 [00:00<?, ? examples/s]
+Map: 100%|██████████| 3/3 [00:00<00:00, 1027.93 examples/s]
+
+Map:   0%|          | 0/1 [00:00<?, ? examples/s]
+Map: 100%|██████████| 1/1 [00:00<00:00, 396.70 examples/s]
+
+Truncating train dataset:   0%|          | 0/3 [00:00<?, ? examples/s]
+Truncating train dataset: 100%|██████████| 3/3 [00:00<00:00, 584.79 examples/s]
+
+Truncating eval dataset:   0%|          | 0/1 [00:00<?, ? examples/s]
+Truncating eval dataset: 100%|██████████| 1/1 [00:00<00:00, 460.96 examples/s]
+[transformers] The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'pad_token_id': 151643}.
+
+  0%|          | 0/1 [00:00<?, ?it/s]C:\Users\User\PycharmProjects\Python_Soup1\venv\Lib\site-packages\torch\utils\data\dataloader.py:759: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  super().__init__(loader)
+
+100%|██████████| 1/1 [05:29<00:00, 329.17s/it]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+C:\Users\User\PycharmProjects\Python_Soup1\venv\Lib\site-packages\torch\utils\data\dataloader.py:759: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  super().__init__(loader)
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A
+                                              
+
+
+                                     
+[A
+100%|██████████| 1/1 [05:31<00:00, 329.17s/it]
+
+100%|██████████| 1/1 [00:00<00:00, 432.89it/s][A
+
+                                              [A
+                                              
+
+100%|██████████| 1/1 [05:31<00:00, 329.17s/it]
+100%|██████████| 1/1 [05:31<00:00, 331.58s/it]
+
+Error: RuntimeError: non-finite training metric eval_loss=nan at step 1; 
+refusing to save the final model because its weights may be corrupted
+Run with --verbose for the full traceback.
+

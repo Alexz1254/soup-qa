@@ -1,0 +1,4 @@
+﻿{"instruction": "Say hello", "input": "", "output": "Hello! How can I help you today?"}
+{"instruction": "What is 2+2?", "input": "", "output": "2+2 is 4."}
+{"instruction": "Translate cat to Russian", "input": "", "output": "Кот."}
+{"instruction": "Write a short greeting", "input": "Morning", "output": "Good morning!"}

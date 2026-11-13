@@ -1,0 +1,109 @@
+EXIT CODE: 0
+--- STDOUT ---
+Loading config from 
+C:\Users\User\PycharmProjects\Python_Soup1\configs\silent_one_epoch_noop.yaml..
+.
+┌────────────────────────────── Training Setup ───────────────────────────────┐
+│ Device:  CPU (no GPU detected)                                              │
+│ Memory:  N/A (CPU mode)                                                     │
+│ Model:   Qwen/Qwen2.5-0.5B-Instruct                                         │
+│ Task:    sft                                                                │
+│ Backend: transformers                                                       │
+│ LoRA:    r=8, alpha=16                                                      │
+│ Quant:   none                                                               │
+│ Seed:    42                                                                 │
+└─────────────────────────────────────────────────────────────────────────────┘
+Loading dataset...
+Loaded: 3 train samples
+Run ID: run_20261112_161601_7b84e1e7
+Setting up model + trainer...
+Loading tokenizer: Qwen/Qwen2.5-0.5B-Instruct
+Loading model: Qwen/Qwen2.5-0.5B-Instruct
+LoRA applied: 540,672 trainable / 494,573,440 total (0.11%)
+Rewind log: 
+C:\Users\User\PycharmProjects\Python_Soup1\output_silent_one_epoch_noop\rewind.
+jsonl
+Base revision: 7ae557604adf67be50417f59c2c2f167def9a775 (bound Hub commit)
+Training started!
+
+{'eval_loss': '2.045', 'eval_runtime': '1.579', 'eval_samples_per_second': '0.633', 'eval_steps_per_second': '0.633', 'eval_entropy': '2.188', 'eval_num_tokens': '125', 'eval_mean_token_accuracy': '0.75', 'epoch': '1'}
+{'train_runtime': '319', 'train_samples_per_second': '0.009', 'train_steps_per_second': '0.003', 'train_loss': '1.49', 'epoch': '1'}
+┌───────────────── Soup Training: Qwen/Qwen2.5-0.5B-Instruct ─────────────────┐
+│ Epoch 1.0/1   100%                                                          │
+│ Step:  1/1                                                                  │
+│ Loss:  -    LR: 0.00e+00                                                    │
+│ Val loss: 2.0446                                                            │
+│ Speed: 0.00 it/s                                                            │
+└─────────────────────────── CPU (no GPU detected) ───────────────────────────┘┌──────────────────────────── Training Complete! ─────────────────────────────┐
+│ Loss: 1.4896                                                                │
+│ Duration: 5m                                                                │
+│ Output:                                                                     │
+│ C:\Users\User\PycharmProjects\Python_Soup1\output_silent_one_epoch_noop     │
+│ Run ID: run_20261112_161601_7b84e1e7                                        │
+│                                                                             │
+│ Quick test:  soup chat --model                                              │
+│ C:\Users\User\PycharmProjects\Python_Soup1\output_silent_one_epoch_noop     │
+│ Push to HF:  soup push --model                                              │
+│ C:\Users\User\PycharmProjects\Python_Soup1\output_silent_one_epoch_noop     │
+│ Merge LoRA:  soup merge --adapter                                           │
+│ C:\Users\User\PycharmProjects\Python_Soup1\output_silent_one_epoch_noop     │
+│ Export GGUF: soup export --model                                            │
+│ C:\Users\User\PycharmProjects\Python_Soup1\output_silent_one_epoch_noop     │
+│ Run details: soup runs show run_20261112_161601_7b84e1e7                    │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+--- STDERR ---
+
+Loading weights:   0%|          | 0/290 [00:00<?, ?it/s]
+Loading weights:  11%|█         | 32/290 [00:00<00:00, 319.81it/s]
+Loading weights:  22%|██▏       | 64/290 [00:00<00:01, 157.92it/s]
+Loading weights:  29%|██▉       | 85/290 [00:00<00:01, 170.85it/s]
+Loading weights:  37%|███▋      | 106/290 [00:00<00:01, 160.56it/s]
+Loading weights:  44%|████▍     | 129/290 [00:00<00:00, 178.00it/s]
+Loading weights:  51%|█████▏    | 149/290 [00:00<00:00, 176.17it/s]
+Loading weights: 100%|██████████| 290/290 [00:00<00:00, 311.98it/s]
+
+Map:   0%|          | 0/3 [00:00<?, ? examples/s][transformers] return_assistant_tokens_mask==True but chat template does not contain `{% generation %}` keyword.
+
+Map: 100%|██████████| 3/3 [00:00<00:00, 69.58 examples/s]
+
+Map:   0%|          | 0/1 [00:00<?, ? examples/s]
+Map: 100%|██████████| 1/1 [00:00<00:00, 267.29 examples/s]
+
+Map:   0%|          | 0/3 [00:00<?, ? examples/s]
+Map: 100%|██████████| 3/3 [00:00<00:00, 1065.99 examples/s]
+
+Map:   0%|          | 0/1 [00:00<?, ? examples/s]
+Map: 100%|██████████| 1/1 [00:00<00:00, 455.06 examples/s]
+
+Truncating train dataset:   0%|          | 0/3 [00:00<?, ? examples/s]
+Truncating train dataset: 100%|██████████| 3/3 [00:00<00:00, 199.26 examples/s]
+
+Truncating eval dataset:   0%|          | 0/1 [00:00<?, ? examples/s]
+Truncating eval dataset: 100%|██████████| 1/1 [00:00<00:00, 524.88 examples/s]
+[transformers] The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'pad_token_id': 151643}.
+
+  0%|          | 0/1 [00:00<?, ?it/s]C:\Users\User\PycharmProjects\Python_Soup1\venv\Lib\site-packages\torch\utils\data\dataloader.py:759: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  super().__init__(loader)
+
+100%|██████████| 1/1 [05:16<00:00, 316.74s/it]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+C:\Users\User\PycharmProjects\Python_Soup1\venv\Lib\site-packages\torch\utils\data\dataloader.py:759: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  super().__init__(loader)
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A
+                                              
+
+
+                                     
+[A
+100%|██████████| 1/1 [05:19<00:00, 316.74s/it]
+
+100%|██████████| 1/1 [00:00<00:00, 2493.64it/s][A
+
+                                               [A
+                                              
+
+100%|██████████| 1/1 [05:19<00:00, 316.74s/it]
+100%|██████████| 1/1 [05:19<00:00, 319.04s/it]
+

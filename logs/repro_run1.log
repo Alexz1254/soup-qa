@@ -1,0 +1,135 @@
+CMD: C:\Users\User\PycharmProjects\Python_Soup1\venv\Scripts\python.exe -m soup_cli train --config C:\Users\User\PycharmProjects\Python_Soup1\configs\repro_run1.yaml --yes
+EXIT CODE: 0
+
+--- STDOUT ---
+Loading config from 
+C:\Users\User\PycharmProjects\Python_Soup1\configs\repro_run1.yaml...
+┌────────────────────────────── Training Setup ───────────────────────────────┐
+│ Device:  CPU (no GPU detected)                                              │
+│ Memory:  N/A (CPU mode)                                                     │
+│ Model:   Qwen/Qwen2.5-0.5B-Instruct                                         │
+│ Task:    sft                                                                │
+│ Backend: transformers                                                       │
+│ LoRA:    r=8, alpha=16                                                      │
+│ Quant:   none                                                               │
+│ Seed:    42                                                                 │
+└─────────────────────────────────────────────────────────────────────────────┘
+Loading dataset...
+Loaded: 3 train samples
+Run ID: run_20261112_152924_4b257f51
+Setting up model + trainer...
+Loading tokenizer: Qwen/Qwen2.5-0.5B-Instruct
+Loading model: Qwen/Qwen2.5-0.5B-Instruct
+LoRA applied: 540,672 trainable / 494,573,440 total (0.11%)
+Rewind log: 
+C:\Users\User\PycharmProjects\Python_Soup1\output_repro_1\rewind.jsonl
+Base revision: 7ae557604adf67be50417f59c2c2f167def9a775 (bound Hub commit)
+Training started!
+
+{'loss': '1.49', 'grad_norm': '14.8', 'learning_rate': '0', 'entropy': '1.982', 'num_tokens': '125', 'mean_token_accuracy': '0.7202', 'epoch': '1'}
+{'eval_loss': '2.045', 'eval_runtime': '1.576', 'eval_samples_per_second': '0.635', 'eval_steps_per_second': '0.635', 'eval_entropy': '2.188', 'eval_num_tokens': '125', 'eval_mean_token_accuracy': '0.75', 'epoch': '1'}
+{'loss': '1.49', 'grad_norm': '14.63', 'learning_rate': '0.0002', 'entropy': '1.982', 'num_tokens': '250', 'mean_token_accuracy': '0.7202', 'epoch': '2'}
+{'eval_loss': '1.76', 'eval_runtime': '1.572', 'eval_samples_per_second': '0.636', 'eval_steps_per_second': '0.636', 'eval_entropy': '2.156', 'eval_num_tokens': '250', 'eval_mean_token_accuracy': '0.75', 'epoch': '2'}
+{'train_runtime': '751.6', 'train_samples_per_second': '0.008', 'train_steps_per_second': '0.003', 'train_loss': '1.49', 'epoch': '2'}
+┌───────────────── Soup Training: Qwen/Qwen2.5-0.5B-Instruct ─────────────────┐
+│ Epoch 2.0/2   100%                                                          │
+│ Step:  2/2                                                                  │
+│ Loss:  1.4896    LR: 2.00e-04                                               │
+│ Val loss: 1.7603                                                            │
+│ Speed: 0.00 it/s                                                            │
+│ Grad:  14.6283                                                              │
+└─────────────────────────── CPU (no GPU detected) ───────────────────────────┘┌──────────────────────────── Training Complete! ─────────────────────────────┐
+│ Loss: 1.4896 -> 1.4896                                                      │
+│ Duration: 12m                                                               │
+│ Output: C:\Users\User\PycharmProjects\Python_Soup1\output_repro_1           │
+│ Run ID: run_20261112_152924_4b257f51                                        │
+│                                                                             │
+│ Quick test:  soup chat --model                                              │
+│ C:\Users\User\PycharmProjects\Python_Soup1\output_repro_1                   │
+│ Push to HF:  soup push --model                                              │
+│ C:\Users\User\PycharmProjects\Python_Soup1\output_repro_1                   │
+│ Merge LoRA:  soup merge --adapter                                           │
+│ C:\Users\User\PycharmProjects\Python_Soup1\output_repro_1                   │
+│ Export GGUF: soup export --model                                            │
+│ C:\Users\User\PycharmProjects\Python_Soup1\output_repro_1                   │
+│ Run details: soup runs show run_20261112_152924_4b257f51                    │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+--- STDERR ---
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+C:\Users\User\PycharmProjects\Python_Soup1\venv\Lib\site-packages\huggingface_hub\file_download.py:149: UserWarning: `huggingface_hub` cache-system uses symlinks by default to efficiently store duplicated files but your machine does not support them in C:\Users\User\.cache\huggingface\hub\models--Qwen--Qwen2.5-0.5B-Instruct. Caching files will still work but in a degraded version that might require more space on your disk. This warning can be disabled by setting the `HF_HUB_DISABLE_SYMLINKS_WARNING` environment variable. For more details, see https://huggingface.co/docs/huggingface_hub/how-to-cache#limitations.
+To support symlinks on Windows, you either need to activate Developer Mode or to run Python as an administrator. In order to activate developer mode, see this article: https://docs.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development
+  warnings.warn(message)
+C:\Users\User\PycharmProjects\Python_Soup1\venv\Lib\site-packages\huggingface_hub\file_download.py:149: UserWarning: `huggingface_hub` cache-system uses symlinks by default to efficiently store duplicated files but your machine does not support them in C:\Users\User\.cache\huggingface\hub. Caching files will still work but in a degraded version that might require more space on your disk. This warning can be disabled by setting the `HF_HUB_DISABLE_SYMLINKS_WARNING` environment variable. For more details, see https://huggingface.co/docs/huggingface_hub/how-to-cache#limitations.
+To support symlinks on Windows, you either need to activate Developer Mode or to run Python as an administrator. In order to activate developer mode, see this article: https://docs.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development
+  warnings.warn(message)
+
+Loading weights:   0%|          | 0/290 [00:00<?, ?it/s]
+Loading weights:  15%|█▍        | 43/290 [00:00<00:00, 382.70it/s]
+Loading weights:  31%|███       | 89/290 [00:00<00:00, 416.46it/s]
+Loading weights:  45%|████▌     | 131/290 [00:00<00:00, 322.86it/s]
+Loading weights:  58%|█████▊    | 167/290 [00:00<00:00, 333.43it/s]
+Loading weights: 100%|██████████| 290/290 [00:00<00:00, 533.45it/s]
+
+Map:   0%|          | 0/3 [00:00<?, ? examples/s][transformers] return_assistant_tokens_mask==True but chat template does not contain `{% generation %}` keyword.
+
+Map: 100%|██████████| 3/3 [00:00<00:00, 61.03 examples/s]
+
+Map:   0%|          | 0/1 [00:00<?, ? examples/s]
+Map: 100%|██████████| 1/1 [00:00<00:00, 307.88 examples/s]
+
+Map:   0%|          | 0/3 [00:00<?, ? examples/s]
+Map: 100%|██████████| 3/3 [00:00<00:00, 1113.14 examples/s]
+
+Map:   0%|          | 0/1 [00:00<?, ? examples/s]
+Map: 100%|██████████| 1/1 [00:00<00:00, 449.65 examples/s]
+
+Truncating train dataset:   0%|          | 0/3 [00:00<?, ? examples/s]
+Truncating train dataset: 100%|██████████| 3/3 [00:00<00:00, 465.60 examples/s]
+
+Truncating eval dataset:   0%|          | 0/1 [00:00<?, ? examples/s]
+Truncating eval dataset: 100%|██████████| 1/1 [00:00<00:00, 404.04 examples/s]
+[transformers] The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'pad_token_id': 151643}.
+
+  0%|          | 0/2 [00:00<?, ?it/s]C:\Users\User\PycharmProjects\Python_Soup1\venv\Lib\site-packages\torch\utils\data\dataloader.py:759: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  super().__init__(loader)
+
+ 50%|█████     | 1/2 [06:18<06:18, 378.87s/it]
+                                              
+
+ 50%|█████     | 1/2 [06:18<06:18, 378.87s/it]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A
+                                              
+
+
+                                     
+[A
+ 50%|█████     | 1/2 [06:20<06:18, 378.87s/it]
+
+100%|██████████| 1/1 [00:00<00:00, 350.14it/s][A
+
+                                              [A
+100%|██████████| 2/2 [12:29<00:00, 373.91s/it]
+                                              
+
+100%|██████████| 2/2 [12:29<00:00, 373.91s/it]C:\Users\User\PycharmProjects\Python_Soup1\venv\Lib\site-packages\torch\utils\data\dataloader.py:759: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  super().__init__(loader)
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A
+                                              
+
+
+                                     
+[A
+100%|██████████| 2/2 [12:31<00:00, 373.91s/it]
+
+100%|██████████| 1/1 [00:00<00:00, 2941.31it/s][A
+
+                                               [A
+                                              
+
+100%|██████████| 2/2 [12:31<00:00, 373.91s/it]
+100%|██████████| 2/2 [12:31<00:00, 375.82s/it]
+

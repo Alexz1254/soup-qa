@@ -1,0 +1,18 @@
+base: Qwen/Qwen2.5-0.5B-Instruct
+task: sft
+data:
+  train: C:\Users\User\PycharmProjects\Python_Soup1\data\train_small.jsonl
+  format: alpaca
+  val_split: 0.25
+  max_length: 64
+training:
+  epochs: 1
+  lr: 0.0002
+  batch_size: 1
+  seed: 42
+  lora:
+    r: 0
+    alpha: 16
+    target_modules: auto
+  quantization: none
+output: C:\Users\User\PycharmProjects\Python_Soup1\output_silent_lora_r_zero
